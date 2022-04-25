@@ -22,11 +22,11 @@ public class MainPage extends BasePage {
     }
 
     public void checkTheMoreButton() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(6) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1)"))).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@class='ow4ym5g4 auili1gw rq0escxv j83agx80 buofh1pr g5gj957u i1fnvgqd oygrvhab cxmmr5t8 hcukyx3x kvgmc6g5 hpfvmrgz qt6c0cv9 jb3vyjys l9j0dhe7 du4w35lb bp9cbjyn btwxx1t3 dflh9lhu scb9dxdr nnctdnn4'])[7]"))).click();
     }
 
     public void checkLeftList() {
-        List<WebElement> links = driver.findElements(By.xpath("(//ul)[3]/li/div/a"));
+        List<WebElement> links = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("(//ul)[3]/li/div/a")));
         System.out.println("Amount of links: " + links.size());
         for (int i = 0; i < links.size(); i++) {
             WebElement E1 = links.get(i);

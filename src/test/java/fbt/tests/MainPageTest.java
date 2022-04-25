@@ -9,19 +9,12 @@ public class MainPageTest extends BaseTest{
         mainPage.isLoaded();
     }
     @Test
-    public void checkMoreButtonInTheLeftOfThePage() throws Exception {
+    public void checkMoreButtonAndLinksInTheLeftOfThePage() throws Exception {
         loginPage.login("vip.saparbaev@bk.ru", "Saparbaev02");
         mainPage.isLoaded();
-        mainPage.checkTheMoreButton();
         Thread.sleep(500);
+        mainPage.checkTheMoreButton();
         takeSnapShot(driver,".//screenshot/showingtheleftpanel.png");
-    }
-    @Test
-    public void isLeftListUrlWorks() throws InterruptedException {
-        loginPage.login("vip.saparbaev@bk.ru", "Saparbaev02");
-        mainPage.isLoaded();
-        mainPage.checkTheMoreButton();
-        Thread.sleep(500);
         mainPage.checkLeftList();
     }
     @Test
